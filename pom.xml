@@ -50,6 +50,13 @@
             <version>3.3.2</version>
         </dependency>
 
+        <!-- PostgreSQl-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
         <!-- Mapstruct -->
         <dependency>
             <groupId>org.mapstruct</groupId>
