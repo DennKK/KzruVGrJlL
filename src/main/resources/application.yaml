@@ -1,6 +1,6 @@
 spring:
   application:
-    name: caselab-test-task
+    name: caselab-file-service
 
   datasource:
     url: jdbc:postgresql://localhost:5432/caselab_db

@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dkcorp</groupId>
-    <artifactId>caselab-test-task</artifactId>
+    <artifactId>caselab-file-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>caselab-test-task</name>
+    <name>caselab-file-service</name>
     <description>Test task for green atom caselab</description>
     <url/>
     <licenses>
