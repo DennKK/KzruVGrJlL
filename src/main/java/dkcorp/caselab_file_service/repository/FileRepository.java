@@ -1,6 +1,6 @@
-package dkcorp.caselab_test_task.repository;
+package dkcorp.caselab_file_service.repository;
 
-import dkcorp.caselab_test_task.entity.FileEntity;
+import dkcorp.caselab_file_service.entity.FileEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FileRepository extends JpaRepository<FileEntity, Long> {

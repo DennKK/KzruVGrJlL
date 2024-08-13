@@ -1,8 +1,8 @@
-package dkcorp.caselab_test_task.controller;
+package dkcorp.caselab_file_service.controller;
 
-import dkcorp.caselab_test_task.dto.file.FileDto;
-import dkcorp.caselab_test_task.dto.file.FileUploadDto;
-import dkcorp.caselab_test_task.service.file.FileService;
+import dkcorp.caselab_file_service.dto.file.FileDto;
+import dkcorp.caselab_file_service.dto.file.FileUploadDto;
+import dkcorp.caselab_file_service.service.file.FileService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

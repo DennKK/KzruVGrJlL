@@ -1,4 +1,4 @@
-package dkcorp.caselab_test_task.dto.file;
+package dkcorp.caselab_file_service.dto.file;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

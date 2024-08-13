@@ -1,4 +1,4 @@
-package dkcorp.caselab_test_task.entity;
+package dkcorp.caselab_file_service.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

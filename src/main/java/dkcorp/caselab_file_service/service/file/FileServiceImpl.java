@@ -1,10 +1,10 @@
-package dkcorp.caselab_test_task.service.file;
+package dkcorp.caselab_file_service.service.file;
 
-import dkcorp.caselab_test_task.dto.file.FileDto;
-import dkcorp.caselab_test_task.dto.file.FileUploadDto;
-import dkcorp.caselab_test_task.entity.FileEntity;
-import dkcorp.caselab_test_task.mapper.FileMapper;
-import dkcorp.caselab_test_task.repository.FileRepository;
+import dkcorp.caselab_file_service.dto.file.FileDto;
+import dkcorp.caselab_file_service.dto.file.FileUploadDto;
+import dkcorp.caselab_file_service.entity.FileEntity;
+import dkcorp.caselab_file_service.mapper.FileMapper;
+import dkcorp.caselab_file_service.repository.FileRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

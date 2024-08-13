@@ -1,4 +1,4 @@
-package dkcorp.caselab_test_task.exception;
+package dkcorp.caselab_file_service.exception;
 
 public class EntityNotFoundException extends RuntimeException {
     public EntityNotFoundException(String message) {

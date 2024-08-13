@@ -1,8 +1,8 @@
-package dkcorp.caselab_test_task.mapper;
+package dkcorp.caselab_file_service.mapper;
 
-import dkcorp.caselab_test_task.dto.file.FileDto;
-import dkcorp.caselab_test_task.dto.file.FileUploadDto;
-import dkcorp.caselab_test_task.entity.FileEntity;
+import dkcorp.caselab_file_service.dto.file.FileDto;
+import dkcorp.caselab_file_service.dto.file.FileUploadDto;
+import dkcorp.caselab_file_service.entity.FileEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
