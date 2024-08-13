@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class FileUploadDto {
     @NotBlank(message = "File data is required")
-    private String file;
+    private String fileData;
 
     @NotBlank(message = "Title is required. Example: FILE_TITLE")
     @Size(min = 1, max = 32, message = "Title should be between 1 and 32 characters. Example: FILE_TITLE")

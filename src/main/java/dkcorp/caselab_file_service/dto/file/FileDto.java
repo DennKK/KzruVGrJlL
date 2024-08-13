@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FileDto {
-    private String file;
+    private String fileData;
     private String title;
     private LocalDateTime creationDate;
     private String description;
