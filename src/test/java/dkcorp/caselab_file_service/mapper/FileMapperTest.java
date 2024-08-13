@@ -17,8 +17,8 @@ public class FileMapperTest {
     @Test
     void mapEntityToDto() {
         byte[] fileData = new byte[]{1, 2, 3};
-        String title = "Название файла";
-        String description = "Описание файла";
+        String title = "File title";
+        String description = "This is the file description";
 
         FileEntity fileEntity = FileEntity.builder()
                 .fileData(fileData)
@@ -42,8 +42,8 @@ public class FileMapperTest {
 
         FileUploadDto fileUploadDto = new FileUploadDto();
         fileUploadDto.setFileData(base64FileData);
-        fileUploadDto.setTitle("Название файла");
-        fileUploadDto.setDescription("Описание файла");
+        fileUploadDto.setTitle("File title");
+        fileUploadDto.setDescription("This is the file description");
 
         FileEntity fileEntity = fileMapper.uploadDtoToEntity(fileUploadDto);
 
