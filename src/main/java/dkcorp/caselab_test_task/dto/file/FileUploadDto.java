@@ -1,0 +1,21 @@
+package dkcorp.caselab_test_task.dto.file;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class FileUploadDto {
+    @NotBlank(message = "File data is required")
+    private String file;
+
+    @NotBlank(message = "Title is required. Example: FILE_TITLE")
+    private String title;
+
+    @Size(max = 500, message = "Description should not exceed 500 characters. Example: This is example of description.")
+    private String description;
+}
