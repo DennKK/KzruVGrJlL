@@ -14,6 +14,7 @@ public class FileUploadDto {
     private String file;
 
     @NotBlank(message = "Title is required. Example: FILE_TITLE")
+    @Size(min = 1, max = 32, message = "Title should be between 1 and 32 characters. Example: FILE_TITLE")
     private String title;
 
     @Size(max = 500, message = "Description should not exceed 500 characters. Example: This is example of description.")
