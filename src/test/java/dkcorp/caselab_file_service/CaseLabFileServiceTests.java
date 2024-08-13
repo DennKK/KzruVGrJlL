@@ -4,10 +4,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CaselabTestTaskApplicationTests {
+class CaseLabTestTaskApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
 
+	@Test
+	void mainTest() {
+		CaseLabFileService.main(new String[]{});
+	}
 }
