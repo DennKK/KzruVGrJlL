@@ -9,8 +9,6 @@ import dkcorp.caselab_file_service.repository.FileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-
 @Service
 @RequiredArgsConstructor
 public class FileServiceImpl implements FileService {
@@ -20,7 +18,6 @@ public class FileServiceImpl implements FileService {
     @Override
     public Long createFile(FileUploadDto fileUploadDto) {
         FileEntity fileEntity = fileMapper.uploadDtoToEntity(fileUploadDto);
-        fileEntity.setCreationDate(LocalDateTime.now());
         return fileRepository.save(fileEntity).getId();
     }
 
