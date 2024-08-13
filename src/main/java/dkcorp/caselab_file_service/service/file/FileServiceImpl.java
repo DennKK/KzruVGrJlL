@@ -3,9 +3,9 @@ package dkcorp.caselab_file_service.service.file;
 import dkcorp.caselab_file_service.dto.file.FileDto;
 import dkcorp.caselab_file_service.dto.file.FileUploadDto;
 import dkcorp.caselab_file_service.entity.FileEntity;
+import dkcorp.caselab_file_service.exception.EntityNotFoundException;
 import dkcorp.caselab_file_service.mapper.FileMapper;
 import dkcorp.caselab_file_service.repository.FileRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
