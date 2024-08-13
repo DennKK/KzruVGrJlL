@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CaseLabFileService {
+public class CaseLabFileServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CaseLabFileService.class, args);
+        SpringApplication.run(CaseLabFileServiceApplication.class, args);
     }
 
 }
