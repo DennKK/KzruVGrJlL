@@ -10,6 +10,7 @@ import java.util.Base64;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class FileMapperTest {
     private final FileMapper fileMapper = Mappers.getMapper(FileMapper.class);
@@ -47,5 +48,17 @@ class FileMapperTest {
         assertArrayEquals(originalFileData, fileEntity.getFileData());
         assertEquals(fileUploadDto.getTitle(), fileEntity.getTitle());
         assertEquals(fileUploadDto.getDescription(), fileEntity.getDescription());
+    }
+
+    @Test
+    void mapNullFileEntityToDtoTest() {
+        FileDto fileDto = fileMapper.entityToDto(null);
+        assertNull(fileDto);
+    }
+
+    @Test
+    void mapNullUploadDtoToFileEntityTest() {
+        FileEntity fileEntity = fileMapper.uploadDtoToEntity(null);
+        assertNull(fileEntity);
     }
 }
