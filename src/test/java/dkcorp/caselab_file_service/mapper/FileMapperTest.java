@@ -11,19 +11,15 @@ import java.util.Base64;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FileMapperTest {
+class FileMapperTest {
     private final FileMapper fileMapper = Mappers.getMapper(FileMapper.class);
 
     @Test
     void mapEntityToDto() {
-        byte[] fileData = new byte[]{1, 2, 3};
-        String title = "File title";
-        String description = "This is the file description";
-
         FileEntity fileEntity = FileEntity.builder()
-                .fileData(fileData)
-                .title(title)
-                .description(description)
+                .fileData(new byte[]{1, 2, 3})
+                .title("File title")
+                .description("This is the file description")
                 .build();
 
         FileDto fileDto = fileMapper.entityToDto(fileEntity);
@@ -31,19 +27,20 @@ public class FileMapperTest {
         assertEquals(fileEntity.getTitle(), fileDto.getTitle());
         assertEquals(fileEntity.getDescription(), fileDto.getDescription());
 
-        String expectedBase64 = fileMapper.mapByteArrayToBase64(fileEntity.getFileData());
+        String expectedBase64 = fileMapper.mapByteArrayToBase64(new byte[]{1, 2, 3});
         assertEquals(expectedBase64, fileDto.getFileData());
     }
 
     @Test
     void mapUploadDtoToEntity() {
         byte[] originalFileData = new byte[]{1, 2, 3};
-        String base64FileData = Base64.getEncoder().encodeToString(originalFileData);
+        String base64FileData = Base64.getEncoder().encodeToString(new byte[]{1, 2, 3});
 
-        FileUploadDto fileUploadDto = new FileUploadDto();
-        fileUploadDto.setFileData(base64FileData);
-        fileUploadDto.setTitle("File title");
-        fileUploadDto.setDescription("This is the file description");
+        FileUploadDto fileUploadDto = FileUploadDto.builder()
+                .fileData(base64FileData)
+                .title("File title")
+                .description("This is the file description")
+                .build();
 
         FileEntity fileEntity = fileMapper.uploadDtoToEntity(fileUploadDto);
 
