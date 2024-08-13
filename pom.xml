@@ -50,6 +50,20 @@
             <version>3.3.2</version>
         </dependency>
 
+        <!-- Mapstruct -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.6.0.RC1</version>
+        </dependency>
+
+        <!-- Mapstruct Processor -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>1.6.0.RC1</version>
+        </dependency>
+
         <!-- Spring doc -->
         <dependency>
             <groupId>org.springdoc</groupId>
