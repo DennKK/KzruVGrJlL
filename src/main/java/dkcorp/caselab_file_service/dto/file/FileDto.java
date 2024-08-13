@@ -14,6 +14,6 @@ import java.time.LocalDateTime;
 public class FileDto {
     private String fileData;
     private String title;
-    private LocalDateTime creationDate;
     private String description;
+    private LocalDateTime creationDate;
 }
