@@ -15,7 +15,7 @@ public interface FileMapper {
     FileEntity uploadDtoToEntity(FileUploadDto fileUploadDto);
 
     @Mapping(target = "fileData", expression = "java(mapByteArrayToBase64(fileEntity.getFileData()))")
-    FileDto entityToFileDto(FileEntity fileEntity);
+    FileDto entityToDto(FileEntity fileEntity);
 
     default String mapByteArrayToBase64(byte[] fileData) {
         return Base64.getEncoder().encodeToString(fileData);

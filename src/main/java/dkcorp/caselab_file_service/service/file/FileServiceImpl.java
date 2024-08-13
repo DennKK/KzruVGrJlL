@@ -23,7 +23,7 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public FileDto findFile(Long fileId) {
-        return fileMapper.entityToFileDto(findFileEntityById(fileId));
+        return fileMapper.entityToDto(findFileEntityById(fileId));
     }
 
     private FileEntity findFileEntityById(Long fileId) {
