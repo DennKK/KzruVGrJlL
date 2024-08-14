@@ -1,1 +1,1 @@
-# Тестовое задание для GreeAtom CaseLab
+# Тестовое задание для GreenAtom CaseLab
