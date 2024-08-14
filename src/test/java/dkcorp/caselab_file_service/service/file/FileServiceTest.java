@@ -11,17 +11,26 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 class FileServiceTest {
-
     @InjectMocks
     private FileServiceImpl fileService;
 
@@ -37,6 +46,53 @@ class FileServiceTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
         creationDate = LocalDateTime.now();
+    }
+
+    @Test
+    void findAllFiles_returnsPagedFileDtos() {
+        int page = 0;
+        int size = 2;
+        String sortBy = "creationDate";
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy).descending());
+
+        List<FileEntity> fileEntities = Arrays.asList(
+                FileEntity.builder()
+                        .id(1L)
+                        .fileData("VGhpcyBpcyB0aGUgZmlsZSBkZXNjcmlwdGlvbg==".getBytes())
+                        .title("File title 1")
+                        .description("This is the first file description")
+                        .creationDate(creationDate)
+                        .build(),
+                FileEntity.builder()
+                        .id(2L)
+                        .fileData("VGhpcyBpcyB0aGUgZmlsZSBkZXNjcmlwdGlvbg==".getBytes())
+                        .title("File title 2")
+                        .description("This is the second file description")
+                        .creationDate(creationDate.plusMinutes(10))
+                        .build()
+        );
+
+        Page<FileEntity> fileEntityPage = new PageImpl<>(fileEntities, pageable, fileEntities.size());
+
+        when(fileRepository.findAll(pageable)).thenReturn(fileEntityPage);
+        when(fileMapper.entityToDto(any(FileEntity.class))).thenAnswer(invocation -> {
+            FileEntity entity = invocation.getArgument(0);
+            return FileDto.builder()
+                    .fileData(Base64.getEncoder().encodeToString(entity.getFileData()))
+                    .title(entity.getTitle())
+                    .description(entity.getDescription())
+                    .creationDate(entity.getCreationDate())
+                    .build();
+        });
+
+        Page<FileDto> result = fileService.findAllFiles(page, size, sortBy);
+
+        assertEquals(fileEntities.size(), result.getContent().size());
+        assertEquals("File title 1", result.getContent().get(0).getTitle());
+        assertEquals("File title 2", result.getContent().get(1).getTitle());
+
+        verify(fileRepository).findAll(pageable);
+        verify(fileMapper, times(fileEntities.size())).entityToDto(any(FileEntity.class));
     }
 
     @Test
