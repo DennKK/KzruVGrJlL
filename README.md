@@ -73,7 +73,7 @@
 - **URL:** [http://localhost:8080/api/v1/files/{fileId}](http://localhost:8080/api/v1/files/{fileId})
 
 **Пример запроса:**
-`GET http://localhost:8080/api/v1/files/3`
+`GET http://localhost:8080/api/v1/files/1`
 
 ## Инструкция по запуску (ВАЖНО)
 
