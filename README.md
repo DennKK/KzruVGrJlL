@@ -48,9 +48,9 @@
 **Тело запроса (JSON):**
 `
 {
-"fileData": "VGhpcyBpcyB0aGUgZmlsZSBkZXNjcmlwdGlvbg==",
-"title": "File title",
-"description": "This is the file description."
+  "fileData": "VGhpcyBpcyB0aGUgZmlsZSBkZXNjcmlwdGlvbg==",
+  "title": "File title",
+  "description": "This is the file description."
 }`
 
 ### 2. Получение списка файлов с пагинацией
