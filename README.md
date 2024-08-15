@@ -39,6 +39,7 @@
 адресу `/api-docs` или `/swagger-ui/index.html`.
 
 ## Инициализация базы данных с помощью Liquibase
+
 В проект для удобства добавлен liquibase. База данных изначально создается с 5 объектами.
 
 ## Примеры тестовых запросов (ВАЖНО)
@@ -51,9 +52,9 @@
 **Тело запроса (JSON):**
 `
 {
-  "fileData": "VGhpcyBpcyB0aGUgZmlsZSBkZXNjcmlwdGlvbg==",
-  "title": "File title",
-  "description": "This is the file description."
+"fileData": "VGhpcyBpcyB0aGUgZmlsZSBkZXNjcmlwdGlvbg==",
+"title": "File title",
+"description": "This is the file description."
 }`
 
 ### 2. Получение списка файлов с пагинацией
@@ -126,4 +127,3 @@ pgAdmin будет доступен по следующему адресу:
 В проекте реализованы юнит-тесты. Для их выполнения используйте команду: `mvn test`
 Отчет о покрытии тестами будет сгенерирован и доступен в папке `target/site/jacoco/index.html`.
 ![image](https://github.com/user-attachments/assets/5f0823cb-7770-4ec3-a0bb-2ee523bcf755)
-
