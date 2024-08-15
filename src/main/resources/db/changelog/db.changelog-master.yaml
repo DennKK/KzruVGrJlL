@@ -1,6 +1,6 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changeset/001_create_files_table.sql
+      file: db/changelog/changeset/002_create_files_table.sql
 
   - include:
-      file: db/changelog/changeset/002_insert_files.sql
+      file: db/changelog/changeset/004_insert_files.sql
