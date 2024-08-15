@@ -26,6 +26,20 @@ services:
     ports:
       - "5432:5432"
 
+  liquibase:
+    image: liquibase/liquibase:4.29
+    depends_on:
+      - caselab-db-service
+    command:
+      - --changelog-file=db.changelog-master.yaml
+      - --driver=org.postgresql.Driver
+      - --url=jjdbc:postgresql://caselab-db-service:5432/caselab_db
+      - --username=postgres
+      - --password=postgres
+      - update
+    volumes:
+      - ./migrations:/liquibase/changelog
+
   pgadmin:
     image: dpage/pgadmin4
     environment:
