@@ -4,11 +4,11 @@ import dkcorp.caselab_file_service.dto.file.FileDto;
 import dkcorp.caselab_file_service.dto.file.FileUploadDto;
 import dkcorp.caselab_file_service.exception.EntityNotFoundException;
 import dkcorp.caselab_file_service.service.file.FileService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpStatus;
@@ -24,17 +24,13 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class FileControllerTest {
     @InjectMocks
     private FileController fileController;
 
     @Mock
     private FileService fileService;
-
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.openMocks(this);
-    }
 
     @Test
     void getFiles_returnsPagedFileDtos() {
